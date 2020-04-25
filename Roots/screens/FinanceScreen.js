@@ -86,10 +86,6 @@ function OptionButton({ icon, label, onPress, isLastOption }) {
   );
 }
 
-FinanceScreen.navigationOptions = {
-  header: null,
-};
-
 const styles = StyleSheet.create({
   contentContainer: {
     paddingTop: 0,

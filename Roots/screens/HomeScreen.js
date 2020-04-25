@@ -5,6 +5,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 import { MonoText } from '../components/StyledText';
 import MapView from 'react-native-maps';
+import { OverlayComponent } from 'react-native-maps';
 
 export default class HomeScreen extends Component {
 
@@ -20,7 +21,8 @@ export default class HomeScreen extends Component {
 
   render () {
     return (
-      <MapView style = {{flex: 1}}
+      <View style={styles.container}>
+      <MapView style={StyleSheet.absoluteFillObject}
           provider = "google"
           region = {{
               latitude: 43.6532,
@@ -28,7 +30,12 @@ export default class HomeScreen extends Component {
               latitudeDelta: 0.0922,
               longitudeDelta: 0.0421
             }}
-        />
+          showsUserLocation
+      />
+    <TouchableOpacity style={styles.overlay}>
+        <Text style={styles.text}>Touchable Opacity</Text>
+    </TouchableOpacity>
+    </View>
     );
   }
 
@@ -41,7 +48,7 @@ HomeScreen.navigationOptions = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    alignItems: 'center',
   },
   developmentModeText: {
     marginBottom: 20,
@@ -53,76 +60,9 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingTop: 30,
   },
-  welcomeContainer: {
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20,
-  },
-  welcomeImage: {
-    width: 100,
-    height: 80,
-    resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: -10,
-  },
-  getStartedContainer: {
-    alignItems: 'center',
-    marginHorizontal: 50,
-  },
-  homeScreenFilename: {
-    marginVertical: 7,
-  },
-  codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)',
-  },
-  codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
-    borderRadius: 3,
-    paddingHorizontal: 4,
-  },
-  getStartedText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
-    textAlign: 'center',
-  },
-  tabBarInfoContainer: {
+  overlay: {
     position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    ...Platform.select({
-      ios: {
-        shadowColor: 'black',
-        shadowOffset: { width: 0, height: -3 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-      },
-      android: {
-        elevation: 20,
-      },
-    }),
-    alignItems: 'center',
-    backgroundColor: '#fbfbfb',
-    paddingVertical: 20,
-  },
-  tabBarInfoText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    textAlign: 'center',
-  },
-  navigationFilename: {
-    marginTop: 5,
-  },
-  helpContainer: {
-    marginTop: 15,
-    alignItems: 'center',
-  },
-  helpLink: {
-    paddingVertical: 15,
-  },
-  helpLinkText: {
-    fontSize: 14,
-    color: '#2e78b7',
+    bottom: 50,
+    backgroundColor: 'rgba(255, 255, 255, 1)',
   },
 });
