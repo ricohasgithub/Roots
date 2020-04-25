@@ -56,7 +56,7 @@ export default function FinanceScreen (){
         isLastOption
     />
 
-    <View style={{paddingTop: 15, backgroundColor: 'lightsteelblue'}}>
+    <View style={{paddingTop: 15, backgroundColor: 'white'}}>
       
     </View>
 
@@ -92,14 +92,14 @@ FinanceScreen.navigationOptions = {
 
 const styles = StyleSheet.create({
   contentContainer: {
-    paddingTop: 40,
+    paddingTop: 0,
   },
   container: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: 'lightsteelblue'
   },
   balanceViewText : {
-    flex: 2, justifyContent: 'flex-start', alignItems: 'center', backgroundColor: 'white', paddingBottom:13
+    flex: 2, justifyContent: 'flex-start', alignItems: 'center', backgroundColor: 'white', paddingBottom:13, paddingTop:40
   },
   balanceText : {
     fontSize: 20, fontWeight: "bold"
