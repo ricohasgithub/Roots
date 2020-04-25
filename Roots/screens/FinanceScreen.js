@@ -14,7 +14,7 @@ export default function FinanceScreen() {
   );
 }
 
-HomeScreen.navigationOptions = {
+FinanceScreen.navigationOptions = {
   header: null,
 };
 
