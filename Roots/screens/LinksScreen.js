@@ -19,9 +19,24 @@ const firebaseConfig = {
   measurementId: "G-9QPPJXPG9D"
 };
 
-if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
-}
+// Initialize the firebase app
+let firebase_app = firebase.initializeApp(firebaseConfig);
+
+// Check to see if the current user is logged in -- show different pages if so
+firebase.auth().onAuthStateChanged(function(user) {
+
+  if (user) {
+
+    // User is signed in
+
+  } else {
+
+    // No user is signed in
+    console.log("Sign in!");
+
+  }
+
+});
 
 export default function LinksScreen() {
   return (

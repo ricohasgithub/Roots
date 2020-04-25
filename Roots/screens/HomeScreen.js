@@ -11,8 +11,8 @@ export default function HomeScreen() {
     <MapView style = {{flex: 1}}
         provider = "google"
         region = {{
-            latitude: 40.76727216,
-            longitude: -73.99392888,
+            latitude: 43.6532,
+            longitude: -79.3832,
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421
           }}
