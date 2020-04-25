@@ -25,7 +25,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         }}
       />
       <BottomTab.Screen
-        name="Links"
+        name="You"
         component={LinksScreen}
         options={{
           title: 'You',
@@ -42,7 +42,7 @@ function getHeaderTitle(route) {
   switch (routeName) {
     case 'Home':
       return 'Your Community';
-    case 'Links':
+    case 'You':
       return 'Profile';
   }
 }
