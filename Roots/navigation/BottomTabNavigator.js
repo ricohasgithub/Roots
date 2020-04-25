@@ -53,6 +53,6 @@ function getHeaderTitle(route) {
     case 'Profile':
       return 'Your Profile';
     case 'Finances':
-      return 'Finances'
+      return 'Finances';
   }
 }

@@ -1,2 +1,2 @@
 # Roots
-Blockchain based crowd-sourcing for stronger communities
+Crowd-sourcing for stronger communities

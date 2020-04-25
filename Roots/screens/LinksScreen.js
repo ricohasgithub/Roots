@@ -4,6 +4,25 @@ import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
 
+import * as firebase from 'firebase';
+import "firebase/auth";
+import "firebase/firestore";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCmIzUERgQIiesJMiulSvn9ZNTq0GP6aV0",
+  authDomain: "roots-275313.firebaseapp.com",
+  databaseURL: "https://roots-275313.firebaseio.com",
+  projectId: "roots-275313",
+  storageBucket: "roots-275313.appspot.com",
+  messagingSenderId: "332657243073",
+  appId: "1:332657243073:web:9a539b8c7a77607d833540",
+  measurementId: "G-9QPPJXPG9D"
+};
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
 export default function LinksScreen() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>

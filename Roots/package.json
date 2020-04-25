@@ -23,15 +23,17 @@
     "expo-constants": "~9.0.0",
     "expo-font": "~8.1.0",
     "expo-web-browser": "~8.1.0",
+    "firebase": "7.9.0",
+    "radar": "^0.34.0",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
     "react-native-gesture-handler": "~1.6.0",
+    "react-native-maps": "0.26.1",
+    "react-native-radar": "^3.0.0-beta.1",
     "react-native-safe-area-context": "0.7.3",
     "react-native-screens": "~2.2.0",
-    "react-native-web": "~0.11.7",
-    "firebase": "7.9.0",
-    "react-native-maps": "0.26.1"
+    "react-native-web": "~0.11.7"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
