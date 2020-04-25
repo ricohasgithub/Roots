@@ -8,6 +8,8 @@ import { MonoText } from '../components/StyledText';
 
 var balance = 77.00;
 balance = balance.toFixed(2)
+var donationTotal = 372.34;
+donationTotal = donationTotal.toFixed(2)
 
 export default function FinanceScreen (){
   return (
@@ -35,9 +37,35 @@ export default function FinanceScreen (){
         isLastOption
     />
 
-    <View style={styles.communityDonation}>
+    <View style={styles.communityDonation1}>
+      <Text style = {styles.donationText1} >Your Donations</Text>
+    </View>
+
+    <View style={styles.communityDonation3}>
+      <Text style = {styles.donationText3}>{donationTotal}</Text>
+    </View>
+
+    <View style={styles.communityDonation2}>
+      <Text style = {styles.donationText2} >                                           usd  total</Text>
+    </View>
+
+    <OptionButton
+        icon="ios-journal"
+        label="View History"
+        onPress={() => alert('You tapped the button!')}
+        isLastOption
+    />
+
+    <View style={{paddingTop: 15, backgroundColor: 'lightsteelblue'}}>
       
     </View>
+
+    <OptionButton
+        icon="ios-send"
+        label="Share"
+        onPress={() => alert('You tapped the button!')}
+        isLastOption
+    />
 
   </ScrollView>
   );
@@ -86,11 +114,24 @@ const styles = StyleSheet.create({
     flex: 2, justifyContent: 'center', alignItems: 'flex-end', backgroundColor: 'white', flexDirection: 'row', paddingBottom: 8
   },
 
-  communityDonation : {
-    flex: 10,
+  communityDonation1 : {
+    justifyContent: 'center', alignItems: 'center', paddingTop: 30, paddingBottom: 10, backgroundColor: 'lightgrey'
   },
-
-
+  donationText1 : {
+    fontSize: 20, fontWeight: "bold"
+  },
+  communityDonation2 : {
+    justifyContent: 'center', alignItems: 'center', paddingTop: 0, paddingBottom: 8, backgroundColor: 'lightsteelblue'
+  },
+  donationText2 : {
+    fontSize: 20, fontWeight: "300"
+  },
+  communityDonation3 : {
+    justifyContent: 'center', alignItems: 'flex-end', backgroundColor: 'lightsteelblue', flexDirection: 'row', paddingTop: 5
+  },
+  donationText3 : {
+    fontSize: 60, fontWeight: "100"
+  },
 
   optionIconContainer: {
     marginRight: 12,
