@@ -41,6 +41,20 @@ export default class LinksScreen extends Component {
 
   }
 
+  loginonpress () {
+      try {
+        firebase
+            .auth()
+            .createUserWithEmailAndPassword(username, password)
+            .then(user => {
+               console.log("SUCCESS");
+               this.state.first = false;
+               this.forceUpdate();
+            });
+      } catch (error) {
+      }
+  }
+
   render () {
 
     if (this.states.first === true) {
