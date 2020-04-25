@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
 
 import * as firebase from 'firebase';
@@ -22,26 +22,57 @@ const firebaseConfig = {
 // Initialize the firebase app
 firebase.initializeApp(firebaseConfig);
 
-// Check to see if the current user is logged in -- show different pages if so
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    first_time = false;
-  }
-});
-
 export default class LinksScreen extends Component {
 
   constructor (props) {
+
     super(props);
+
+    this.states = {
+      username: '',
+      first: true,
+    }
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        this.states.first = false;
+      }
+    })
+
   }
 
   render () {
 
-    return(
-      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-      
-      </ScrollView>
-    );
+    if (this.states.first === true) {
+      return (
+              <View style={styles.container}>
+                <TextInput
+                  placeholder="Email"
+                  onChangeText={(username) => this.setState({ username })}
+                   label="Email"
+                  style={styles.input}
+                />
+                <TextInput
+                  placeholder="Password"
+                  onChangeText={(password) => this.setState({ password })}
+                  label="Password"
+                  secureTextEntry={true}
+                  style={styles.input}
+                />
+                <Button
+                  title={'Sign Up'}
+                  style={styles.formbutton}
+                  onPress={this.loginonpress}
+                />
+              </View>
+        );
+    } else {
+      return(
+        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+
+        </ScrollView>
+      );
+    }
 
   }
 
@@ -74,4 +105,35 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     marginTop: 1,
   },
+  container: {
+  flex: 1,
+  alignItems: 'center',
+  justifyContent: 'center',
+  backgroundColor: '#fff',
+},
+input: {
+  width: 200,
+  height: 44,
+  padding: 10,
+  marginBottom: 25,
+  borderWidth: 1,
+  borderColor: '#e8e8e8',
+},
+inputext: {
+  width: 200,
+  height: 44,
+  padding: 10,
+  textAlign:'center',
+  fontWeight:'bold',
+  borderWidth: 1,
+  borderColor: '#e8e8e8',
+  marginBottom: 10,
+},
+formbutton: {
+  width: 200,
+  height: 44,
+  padding: 10,
+  marginBottom: 10,
+  backgroundColor: '#54ffee',
+}
 });
