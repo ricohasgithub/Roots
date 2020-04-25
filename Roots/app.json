@@ -26,7 +26,13 @@
       "supportsTablet": true,
       "config": {
         "googleMapsApiKey": "AIzaSyA2-dspbQFr-hd6lEzrDKINjyXjZRDcotc"
-      }
+      },
+      "bundleIdentifier": "com.rootshacknow.roots",
+      "buildNumber": "1.0.0"
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js",
+    "android": {
+      "package": "com.rootshacknow.roots"
     }
   }
 }
