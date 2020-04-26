@@ -7,7 +7,8 @@ import { MonoText } from '../components/StyledText';
 import MapView from 'react-native-maps';
 import { OverlayComponent } from 'react-native-maps';
 import { Marker } from 'react-native-maps';
-import { Overlay } from 'react-native-elements';
+import { CalloutSubview } from 'react-native-maps';
+
 
 export default class HomeScreen extends Component {
 
@@ -34,7 +35,7 @@ export default class HomeScreen extends Component {
             }}
           showsUserLocation
       >
-      <Markers lat = {43.6532} lon = {-79.3832}/>
+      <Markers lat = {samplelat} lon = {samplelon} titl = {sampleRequest} descr = {sampleDescr}/>
       </MapView>
     <TouchableOpacity style={styles.overlay}>
         <Text style={styles.text}>Touchable Opacity</Text>
@@ -49,17 +50,21 @@ HomeScreen.navigationOptions = {
   header: null,
 };
 
-function Markers({lat, lon}){
+function Markers({lat, lon, titl, descr}){
   return(<Marker coordinate={{latitude: lat,
     longitude: lon}}
     pinColor='red' opacity = {1}
-    onPress={e => alert('You tapped the marker!')}
+    title = {titl}
+    description = {descr}
     >
     
    </Marker>);
 }
 
-
+var samplelat = 43.6532;
+var samplelon = -79.3832;
+var sampleRequest = '$126 needed';
+var sampleDescr = 'We could not afford food, electricity, and toilet paper';
 
 const styles = StyleSheet.create({
   container: {
@@ -82,3 +87,18 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255, 255, 255, 1)',
   },
 });
+
+const CustomMarker = () => (
+  <View
+    style={{
+      paddingVertical: 10,
+      paddingHorizontal: 30,
+      backgroundColor: "#007bff",
+      borderColor: "#eee",
+      borderRadius: 5,
+      elevation: 10
+    }}
+  >
+    <Text style={{ color: "#fff" }}>Berlin</Text>
+  </View>
+);
