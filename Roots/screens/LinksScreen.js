@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput,TouchableOpacity } from 'react-native';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
 
 import * as firebase from 'firebase';
@@ -60,24 +60,27 @@ export default class LinksScreen extends Component {
     if (this.states.first === true) {
       return (
               <View style={styles.container}>
+                <View style={styles.View1}><Text style={{fontSize: 50, fontWeight: '800'}}>ROOTS</Text></View>
+                <View style={styles.View2}></View>
+                <View style={styles.View3}></View>
                 <TextInput
                   placeholder="Email"
                   onChangeText={(username) => this.setState({ username })}
                    label="Email"
-                  style={styles.input}
+                  style={styles.input1}
                 />
                 <TextInput
                   placeholder="Password"
                   onChangeText={(password) => this.setState({ password })}
                   label="Password"
                   secureTextEntry={true}
-                  style={styles.input}
+                  style={styles.input2}
                 />
-                <Button
-                  title={'Sign Up'}
-                  style={styles.formbutton}
-                  onPress={this.loginonpress}
-                />
+
+                <TouchableOpacity style={styles.formbutton} onPress={this.loginonpress}>
+                  <Text style={{ color: 'black', fontWeight: '200', fontSize:23 }}>Sign In</Text>
+                </TouchableOpacity>
+
               </View>
         );
     } else {
@@ -125,13 +128,25 @@ const styles = StyleSheet.create({
   justifyContent: 'center',
   backgroundColor: '#fff',
 },
-input: {
+input1: {
   width: 200,
   height: 44,
   padding: 10,
   marginBottom: 25,
   borderWidth: 1,
-  borderColor: '#e8e8e8',
+  borderColor: 'black',
+  position: 'absolute',
+    bottom: 360,
+},
+input2: {
+  width: 200,
+  height: 44,
+  padding: 10,
+  marginBottom: 25,
+  borderWidth: 1,
+  borderColor: 'black',
+  position: 'absolute',
+    bottom: 260,
 },
 inputext: {
   width: 200,
@@ -140,14 +155,25 @@ inputext: {
   textAlign:'center',
   fontWeight:'bold',
   borderWidth: 1,
-  borderColor: '#e8e8e8',
+  borderColor: 'black',
+  color: "darkgrey",
   marginBottom: 10,
 },
 formbutton: {
-  width: 200,
-  height: 44,
-  padding: 10,
-  marginBottom: 10,
-  backgroundColor: '#54ffee',
-}
+  position: 'absolute',
+  bottom: 200,
+  backgroundColor: 'white',
+  paddingVertical: 10,
+      paddingHorizontal: 30,
+      borderColor: "black",
+      borderRadius: 5,
+      elevation: 10
+},
+View1: {backgroundColor:'white', flex: 1.5, paddingTop: 50, justifyContent: 'flex-start', alignItems: 'center'},
+View2: {backgroundColor:'lightsteelblue', flex: 6.5, width: 400,
+height: 400,
+padding: 10,},
+View3: {backgroundColor:'moccasin', flex: 0.5,  width: 400,
+height: 400,
+padding: 10,}
 });

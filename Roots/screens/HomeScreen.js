@@ -28,8 +28,8 @@ export default class HomeScreen extends Component {
       <MapView style={StyleSheet.absoluteFillObject}
           provider = "google"
           region = {{
-              latitude: 43.6532,
-              longitude: -79.3832,
+              latitude: 43.4756,
+              longitude: -79.6483,
               latitudeDelta: 0.0922,
               longitudeDelta: 0.0421
             }}
@@ -37,8 +37,8 @@ export default class HomeScreen extends Component {
       >
       <Markers lat = {samplelat} lon = {samplelon} titl = {sampleRequest} descr = {sampleDescr}/>
       </MapView>
-    <TouchableOpacity style={styles.overlay}>
-        <Text style={styles.text}>Touchable Opacity</Text>
+    <TouchableOpacity style={styles.overlay} onPress={() => WebBrowser.openBrowserAsync('https://cocky-panini-0ad02c.netlify.app/')}>
+        <Text style={{ color: 'white', fontWeight: 'bold', fontSize:15 }}>Donate Now</Text>
     </TouchableOpacity>
     </View>
     );
@@ -61,8 +61,8 @@ function Markers({lat, lon, titl, descr}){
    </Marker>);
 }
 
-var samplelat = 43.6532;
-var samplelon = -79.3832;
+var samplelat = 43.5090;
+var samplelon = -79.6540;
 var sampleRequest = '$126 needed';
 var sampleDescr = 'We could not afford food, electricity, and toilet paper';
 
@@ -84,7 +84,12 @@ const styles = StyleSheet.create({
   overlay: {
     position: 'absolute',
     bottom: 50,
-    backgroundColor: 'rgba(255, 255, 255, 1)',
+    paddingVertical: 10,
+      paddingHorizontal: 30,
+      backgroundColor: "#007bff",
+      borderColor: "#eee",
+      borderRadius: 5,
+      elevation: 10
   },
 });
 
@@ -99,6 +104,6 @@ const CustomMarker = () => (
       elevation: 10
     }}
   >
-    <Text style={{ color: "#fff" }}>Berlin</Text>
+    <Text style={{ color: 'white', fontWeight: 'bold', fontSize:15 }}>Berlin</Text>
   </View>
 );

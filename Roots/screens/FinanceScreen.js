@@ -6,9 +6,9 @@ import { Ionicons } from '@expo/vector-icons';
 
 import { MonoText } from '../components/StyledText';
 
-var balance = 77.00;
+var balance = 25.01;
 balance = balance.toFixed(2)
-var donationTotal = 372.34;
+var donationTotal = 0;
 donationTotal = donationTotal.toFixed(2)
 
 export default function FinanceScreen (){
@@ -27,13 +27,13 @@ export default function FinanceScreen (){
     <OptionButton
         icon="ios-wallet"
         label="Top Up"
-        onPress={() => alert('You tapped the button!')}
+        onPress={() => WebBrowser.openBrowserAsync('https://cocky-panini-0ad02c.netlify.app/')}
     />
 
     <OptionButton
         icon="md-wallet"
         label="Withdraw"
-        onPress={() => alert('You tapped the button!')}
+        onPress={() => WebBrowser.openBrowserAsync('https://cocky-panini-0ad02c.netlify.app/')}
         isLastOption
     />
 
@@ -52,7 +52,7 @@ export default function FinanceScreen (){
     <OptionButton
         icon="ios-journal"
         label="View History"
-        onPress={() => alert('You tapped the button!')}
+        onPress={() => alert('You have no donations yet!')}
         isLastOption
     />
 
@@ -63,7 +63,7 @@ export default function FinanceScreen (){
     <OptionButton
         icon="ios-send"
         label="Share"
-        onPress={() => alert('You tapped the button!')}
+        onPress={() => WebBrowser.openBrowserAsync('https://facebook.com')}
         isLastOption
     />
 
