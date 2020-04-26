@@ -53,17 +53,13 @@ function Markers({lat, lon}){
   return(<Marker coordinate={{latitude: lat,
     longitude: lon}}
     pinColor='red' opacity = {1}
-    onPress={e => <OverlayScreen/>}
+    onPress={e => alert('You tapped the marker!')}
     >
     
    </Marker>);
 }
 
-function OverlayScreen({}){
-    return(
-      alert('You tapped the marker!')
-    );
-}
+
 
 const styles = StyleSheet.create({
   container: {
