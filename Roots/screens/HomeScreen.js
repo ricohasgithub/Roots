@@ -6,6 +6,8 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { MonoText } from '../components/StyledText';
 import MapView from 'react-native-maps';
 import { OverlayComponent } from 'react-native-maps';
+import { Marker } from 'react-native-maps';
+import { Overlay } from 'react-native-elements';
 
 export default class HomeScreen extends Component {
 
@@ -14,7 +16,7 @@ export default class HomeScreen extends Component {
     super(props);
 
     this.states = {
-
+      
     }
 
   }
@@ -31,7 +33,9 @@ export default class HomeScreen extends Component {
               longitudeDelta: 0.0421
             }}
           showsUserLocation
-      />
+      >
+      <Markers lat = {43.6532} lon = {-79.3832}/>
+      </MapView>
     <TouchableOpacity style={styles.overlay}>
         <Text style={styles.text}>Touchable Opacity</Text>
     </TouchableOpacity>
@@ -44,6 +48,22 @@ export default class HomeScreen extends Component {
 HomeScreen.navigationOptions = {
   header: null,
 };
+
+function Markers({lat, lon}){
+  return(<Marker coordinate={{latitude: lat,
+    longitude: lon}}
+    pinColor='red' opacity = {1}
+    onPress={e => <OverlayScreen/>}
+    >
+    
+   </Marker>);
+}
+
+function OverlayScreen({}){
+    return(
+      alert('You tapped the marker!')
+    );
+}
 
 const styles = StyleSheet.create({
   container: {

@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: 'moccasin'
   },
   balanceViewText : {
     flex: 2, justifyContent: 'flex-start', alignItems: 'center', backgroundColor: 'white', paddingBottom:13, paddingTop:40
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   },
 
   communityDonation1 : {
-    justifyContent: 'center', alignItems: 'center', paddingTop: 30, paddingBottom: 10, backgroundColor: 'white'
+    justifyContent: 'center', alignItems: 'center', paddingTop: 30, paddingBottom: 10, backgroundColor: 'lightsteelblue'
   },
   donationText1 : {
     fontSize: 20, fontWeight: "bold"

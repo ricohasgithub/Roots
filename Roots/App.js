@@ -8,6 +8,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import BottomTabNavigator from './navigation/BottomTabNavigator';
 import useLinking from './navigation/useLinking';
+import 'react-native-gesture-handler';
 
 const Stack = createStackNavigator();
 
